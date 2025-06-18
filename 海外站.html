@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>风景搜索界面</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      /* 背景图示例：请将 URL 替换为你喜欢的风景图 */
+      background: url('https://source.unsplash.com/1920x1080/?landscape,nature') 
+                  center/cover no-repeat fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);  /* 半透明遮罩，突出搜索框 */
+    }
+    .search-container {
+      position: relative;
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      backdrop-filter: blur(5px);
+    }
+    .search-container input[type="text"] {
+      width: 80%;
+      padding: 12px 16px;
+      font-size: 1.1rem;
+      border: 2px solid #ddd;
+      border-radius: 24px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .search-container input[type="text"]:focus {
+      border-color: #6CA0DC;
+    }
+    .search-container button {
+      padding: 12px 20px;
+      font-size: 1.1rem;
+      margin-left: 8px;
+      border: none;
+      border-radius: 24px;
+      background-color: #6CA0DC;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .search-container button:hover {
+      background-color: #548AB9;
+    }
+    .centered {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="search-container centered">
+    <input type="text" placeholder="请输入搜索内容……" />
+    <button>搜索</button>
+  </div>
+</body>
+</html>
